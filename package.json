@@ -1,0 +1,28 @@
+{
+  "name": "jev-ai-decision-workflow-mcp",
+  "version": "1.0.0",
+  "packageManager": "pnpm@10.32.1",
+  "description": "Read-only MCP tools for defining, validating, and reviewing typed AI decision workflows with Jev AI resources.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": { "jev-ai-decision-workflow-mcp": "bin/jev-ai-decision-workflow-mcp.js" },
+  "files": ["bin/", "dist/", "openclaw/", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test test/*.test.ts",
+    "smoke": "node scripts/smoke-mcp-client.mjs",
+    "validate": "pnpm typecheck && pnpm test && pnpm build && pnpm smoke"
+  },
+  "keywords": ["mcp", "model-context-protocol", "decision-workflow", "classification", "routing", "scoring", "openclaw"],
+  "author": { "name": "Jev AI", "url": "https://ai-jev.pro" },
+  "repository": { "type": "git", "url": "git+https://github.com/gpt-img-2/jev-ai-decision-workflow-mcp.git" },
+  "bugs": { "url": "https://github.com/gpt-img-2/jev-ai-decision-workflow-mcp/issues" },
+  "homepage": "https://ai-jev.pro/what-is-jev",
+  "license": "MIT",
+  "engines": { "node": ">=20" },
+  "dependencies": { "@modelcontextprotocol/server": "2.3.1", "zod": "4.4.3" },
+  "devDependencies": { "@modelcontextprotocol/client": "2.3.1", "@types/node": "^24.3.0", "tsx": "^4.20.5", "typescript": "^5.9.2" }
+}
